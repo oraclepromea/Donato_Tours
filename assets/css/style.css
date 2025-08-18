@@ -340,8 +340,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .tours-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
 .tour-card {
@@ -350,6 +351,8 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
 }
 
 .tour-card:hover {
@@ -358,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tour-image {
-    height: 250px;
+    height: 200px;
     background: linear-gradient(45deg, var(--secondary-green), var(--accent-green));
     position: relative;
     display: flex;
@@ -380,34 +383,177 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem;
     border-radius: var(--border-radius);
     text-align: center;
+    position: relative;
 }
 
 .tour-overlay h3 {
     font-size: 1.5rem;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
+}
+
+.tour-duration {
+    background-color: var(--accent-green);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .tour-content {
     padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .tour-content h4 {
     color: var(--primary-green);
     margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.tour-content p {
+    margin-bottom: 1.5rem;
+    color: var(--gray-medium);
+    line-height: 1.6;
+}
+
+/* Tour Itinerary Styles */
+.tour-itinerary {
+    background-color: var(--soft-cream);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--primary-green);
+}
+
+.tour-itinerary h5 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.day-item {
+    background-color: var(--white);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-green);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.day-item:last-child {
+    margin-bottom: 0;
+}
+
+.day-item strong {
+    color: var (--primary-green);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.detailed-schedule {
+    list-style: none;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+}
+
+.detailed-schedule li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.detailed-schedule li:last-child {
+    border-bottom: none;
+}
+
+.detailed-schedule strong {
+    color: var(--river-blue);
+    margin-right: 0.5rem;
+    display: inline;
 }
 
 .tour-features {
     list-style: none;
     margin: 1.5rem 0;
+    padding: 0;
 }
 
 .tour-features li {
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     border-bottom: 1px solid var(--gray-light);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
 }
 
 .tour-features li:last-child {
     border-bottom: none;
+}
+
+/* Tour Pricing */
+.tour-pricing {
+    background-color: var(--gray-light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.price-label {
+    display: block;
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.price {
+    display: block;
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Tour Information Section */
+.tour-info {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--gray-light);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--soft-cream);
+    border-radius: var(--border-radius);
+    transition: var(--transition-smooth);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.info-item h4 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    color: var(--gray-medium);
+    line-height: 1.6;
 }
 
 /* Gallery Section */
