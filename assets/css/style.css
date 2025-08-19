@@ -235,8 +235,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="leaves" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23leaves)"/></svg>');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,18 +244,35 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(29, 80, 22, 0.4);
+    background: rgba(29, 80, 22, 0.6);
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 800px;
     padding: 0 20px;
 }
@@ -336,6 +351,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--border-radius);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
 }
 
 .feature:hover {
@@ -343,14 +360,46 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+.feature-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.feature-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition-smooth);
+}
+
+.feature:hover .feature-bg {
+    opacity: 0.2;
+    transform: scale(1.05);
+}
+
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .feature h3 {
     color: var(--primary-green);
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.feature p {
+    position: relative;
+    z-index: 2;
 }
 
 /* Tours Section */
@@ -382,12 +431,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tour-image {
-    height: 200px;
-    background: linear-gradient(45deg, var(--secondary-green), var(--accent-green));
+    height: 250px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.tour-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition-smooth);
+}
+
+.tour-card:hover .tour-bg-image {
+    transform: scale(1.1);
 }
 
 .tour-image.pilon-lajas {
@@ -399,26 +460,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tour-overlay {
-    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
     color: var(--white);
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    position: relative;
+    z-index: 2;
 }
 
 .tour-overlay h3 {
     font-size: 1.5rem;
     margin: 0 0 0.5rem 0;
-}
-
-.tour-duration {
-    background-color: var(--accent-green);
-    color: var(--white);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
 }
 
 .tour-content {
@@ -594,22 +653,60 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: var(--transition-smooth);
+    position: relative;
+    cursor: pointer;
+    animation: fadeIn 0.6s ease forwards;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-placeholder {
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+.gallery-item:nth-child(7) { animation-delay: 0.7s; }
+.gallery-item:nth-child(8) { animation-delay: 0.8s; }
+.gallery-item:nth-child(9) { animation-delay: 0.9s; }
+
+.gallery-image {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--secondary-green), var(--accent-green));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition-smooth);
+    loading: lazy;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: var(--white);
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+    opacity: 0;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
     font-weight: 500;
     font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Contact Section */
@@ -667,7 +764,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-item p {
     text-align: center;
-    color: var(--gray-medium);
+    color: var (--gray-medium);
     margin: 0;
 }
 
@@ -880,5 +977,31 @@ h1, h2, h3, h4, h5, h6 {
     .btn {
         padding: 12px 24px;
         font-size: 0.9rem;
+    }
+}
+
+/* Image Loading and Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-bg-image,
+.tour-bg-image,
+.gallery-image {
+    loading: lazy;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Image fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
