@@ -248,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 .lang-btn {
     background: none;
     border: 2px solid var(--primary-green);
-    color: var(--primary-green);
+    color: var (--primary-green);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
@@ -918,6 +918,27 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-credit {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.studio-link {
+    color: var(--light-green);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.studio-link:hover {
+    color: var(--white);
+    text-decoration: underline;
 }
 
 /* Responsive Design */
