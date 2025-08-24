@@ -255,6 +255,301 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 
     console.log('Donato Tours website loaded successfully!');
+
+    // Translation System
+    const translations = {
+        en: {
+            nav: {
+                home: "Home",
+                tours: "Tours", 
+                about: "About",
+                gallery: "Gallery",
+                contact: "Contact"
+            },
+            hero: {
+                title: "Welcome to the Amazonian Region of Bolivia",
+                subtitle: "Where the rainforest and the pampas form one of the most amazing landscapes ever seen",
+                explore: "Explore Tours",
+                contact: "Contact Us"
+            },
+            about: {
+                title: "Discover Bolivia's Natural Wonders",
+                description: "Experience the incredible biodiversity of Madidi National Park and the Biosphere Reserve Pilon Lajas, two of Bolivia's most important protected areas surrounded by vibrant communities in the North-West region.",
+                biodiversity: {
+                    title: "Biodiversity",
+                    text: "Explore one of the world's most biodiverse regions"
+                },
+                adventure: {
+                    title: "Adventure", 
+                    text: "Rafting, kayaking, and expedition trips"
+                },
+                comfort: {
+                    title: "Comfort",
+                    text: "Comfortable cabañas with soft beds for relaxation"
+                }
+            },
+            gallery: {
+                title: "Experience Gallery",
+                description: "Glimpses of the amazing adventures that await you",
+                wildlife: "Amazon Wildlife",
+                river: "River Adventures", 
+                treehouse: "Tree House Experience",
+                lodge: "Eco Lodge Comfort",
+                culture: "Local Communities",
+                cultural: "Cultural Experiences",
+                horseback: "Horseback Adventures",
+                fishing: "Fishing Experiences",
+                encounters: "Wildlife Encounters"
+            },
+            tours: {
+                title: "Our Tour Packages",
+                description: "Choose from our carefully crafted adventure experiences with detailed day-by-day itineraries",
+                madidi: {
+                    title: "Madidi Deep Jungle Adventure",
+                    description: "Discover the incredible biodiversity of Madidi National Park with guided trekking and wildlife observation in pristine rainforest.",
+                    duration: "3-6 Days",
+                    pricing: "Contact for pricing",
+                    book: "📱 Book Now on WhatsApp"
+                },
+                pilon: {
+                    title: "Pilon Lajas Cultural & Rafting Expedition", 
+                    description: "Experience the Biosphere Reserve Pilon Lajas with indigenous culture, thrilling rafting, and pristine nature exploration.",
+                    duration: "3-9 Days",
+                    pricing3: "3 Days from: $120 USD",
+                    pricing9: "9 Days from: $360 USD",
+                    book: "📱 Book Now on WhatsApp"
+                },
+                pampas: {
+                    title: "Yacuma River Pampas Adventure",
+                    description: "Enjoy wildlife observation, swimming with pink dolphins, and horseback riding in the warm waters and grasslands of the Yacuma River region.",
+                    duration: "3 Days",
+                    pricingStd: "Standard (3 days): $240 USD",
+                    pricingPrem: "Premium (3 days): $390 USD",
+                    book: "📱 Book Now on WhatsApp"
+                }
+            },
+            contact: {
+                title: "Contact Us",
+                description: "Ready to start your Amazon adventure?",
+                getInTouch: "Get in Touch",
+                email: "Email",
+                phone: "Phone", 
+                location: "Location",
+                mapTitle: "Find Us on the Map",
+                address: "Address: HF5C+979, Avaroa, Rurrenabaque, Beni, Bolivia",
+                directions: "Get Directions"
+            },
+            footer: {
+                tagline: "Your gateway to Bolivia's Amazon adventures",
+                quickLinks: "Quick Links",
+                contactInfo: "Contact Info",
+                copyright: "© 2025 Donato Tours. All rights reserved."
+            }
+        },
+        es: {
+            nav: {
+                home: "Inicio",
+                tours: "Tours",
+                about: "Nosotros", 
+                gallery: "Galería",
+                contact: "Contacto"
+            },
+            hero: {
+                title: "Bienvenidos a la Región Amazónica de Bolivia",
+                subtitle: "Donde la selva tropical y las pampas forman uno de los paisajes más increíbles jamás vistos",
+                explore: "Explorar Tours",
+                contact: "Contáctanos"
+            },
+            about: {
+                title: "Descubre las Maravillas Naturales de Bolivia",
+                description: "Experimenta la increíble biodiversidad del Parque Nacional Madidi y la Reserva de la Biosfera Pilón Lajas, dos de las áreas protegidas más importantes de Bolivia rodeadas de comunidades vibrantes en la región del Noroeste.",
+                biodiversity: {
+                    title: "Biodiversidad",
+                    text: "Explora una de las regiones más biodiversas del mundo"
+                },
+                adventure: {
+                    title: "Aventura",
+                    text: "Rafting, kayak y viajes de expedición"
+                },
+                comfort: {
+                    title: "Comodidad", 
+                    text: "Cabañas cómodas con camas suaves para relajarse"
+                }
+            },
+            gallery: {
+                title: "Galería de Experiencias",
+                description: "Vislumbres de las increíbles aventuras que te esperan",
+                wildlife: "Vida Silvestre Amazónica",
+                river: "Aventuras en el Río",
+                treehouse: "Experiencia Casa del Árbol",
+                lodge: "Comodidad Eco Lodge",
+                culture: "Comunidades Locales",
+                cultural: "Experiencias Culturales",
+                horseback: "Aventuras a Caballo",
+                fishing: "Experiencias de Pesca",
+                encounters: "Encuentros con Vida Silvestre"
+            },
+            tours: {
+                title: "Nuestros Paquetes de Tour",
+                description: "Elige entre nuestras experiencias de aventura cuidadosamente diseñadas con itinerarios detallados día a día",
+                madidi: {
+                    title: "Aventura Profunda en la Selva de Madidi",
+                    description: "Descubre la increíble biodiversidad del Parque Nacional Madidi con trekking guiado y observación de vida silvestre en selva virgen.",
+                    duration: "3-6 Días",
+                    pricing: "Contactar para precios",
+                    book: "📱 Reservar por WhatsApp"
+                },
+                pilon: {
+                    title: "Expedición Cultural y Rafting Pilón Lajas",
+                    description: "Experimenta la Reserva de la Biosfera Pilón Lajas con cultura indígena, rafting emocionante y exploración de naturaleza virgen.",
+                    duration: "3-9 Días", 
+                    pricing3: "3 Días desde: $120 USD",
+                    pricing9: "9 Días desde: $360 USD",
+                    book: "📱 Reservar por WhatsApp"
+                },
+                pampas: {
+                    title: "Aventura en las Pampas del Río Yacuma",
+                    description: "Disfruta observación de vida silvestre, natación con delfines rosados y cabalgatas en las aguas cálidas y pastizales de la región del Río Yacuma.",
+                    duration: "3 Días",
+                    pricingStd: "Estándar (3 días): $240 USD",
+                    pricingPrem: "Premium (3 días): $390 USD", 
+                    book: "📱 Reservar por WhatsApp"
+                }
+            },
+            contact: {
+                title: "Contáctanos",
+                description: "¿Listo para comenzar tu aventura amazónica?",
+                getInTouch: "Ponte en Contacto",
+                email: "Correo Electrónico",
+                phone: "Teléfono",
+                location: "Ubicación",
+                mapTitle: "Encuéntranos en el Mapa",
+                address: "Dirección: HF5C+979, Avaroa, Rurrenabaque, Beni, Bolivia",
+                directions: "Obtener Direcciones"
+            },
+            footer: {
+                tagline: "Tu puerta de entrada a las aventuras amazónicas de Bolivia",
+                quickLinks: "Enlaces Rápidos", 
+                contactInfo: "Información de Contacto",
+                copyright: "© 2025 Donato Tours. Todos los derechos reservados."
+            }
+        }
+    };
+
+    // Language Management
+    let currentLanguage = 'en';
+
+    function initializeLanguage() {
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('donatoToursLanguage');
+        if (savedLang && translations[savedLang]) {
+            currentLanguage = savedLang;
+        }
+        
+        // Update active button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.lang === currentLanguage) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Apply translations
+        translatePage();
+    }
+
+    function translatePage() {
+        const lang = translations[currentLanguage];
+        
+        // Update document language attribute
+        document.documentElement.lang = currentLanguage;
+        
+        // Translate all elements with data-translate attributes
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const translation = getNestedTranslation(lang, key);
+            
+            if (translation) {
+                element.textContent = translation;
+            }
+        });
+        
+        // Update page title and meta description
+        if (currentLanguage === 'es') {
+            document.title = "Donato Tours - Aventuras Amazónicas en Bolivia";
+            document.querySelector('meta[name="description"]').content = "Descubre la impresionante región amazónica de Bolivia con Donato Tours. Explora el Parque Nacional Madidi, la Reserva de la Biosfera Pilón Lajas y vive aventuras inolvidables.";
+        } else {
+            document.title = "Donato Tours - Amazon Adventures in Bolivia";
+            document.querySelector('meta[name="description"]').content = "Discover the breathtaking Amazonian region of Bolivia with Donato Tours. Explore Madidi National Park, Pilon Lajas Biosphere Reserve, and experience unforgettable adventures.";
+        }
+        
+        // Update WhatsApp button texts and links
+        updateWhatsAppButtons();
+    }
+
+    function getNestedTranslation(obj, key) {
+        return key.split('.').reduce((o, k) => (o || {})[k], obj);
+    }
+
+    function updateWhatsAppButtons() {
+        const buttons = document.querySelectorAll('.whatsapp-btn');
+        const bookText = currentLanguage === 'es' ? '📱 Reservar por WhatsApp' : '📱 Book Now on WhatsApp';
+        
+        buttons.forEach((btn, index) => {
+            btn.textContent = bookText;
+            
+            // Update WhatsApp message based on language and tour
+            let message = '';
+            if (currentLanguage === 'es') {
+                if (index === 0) {
+                    message = 'Hola Donato Tours! Estoy interesado en la Aventura Profunda en la Selva de Madidi. ¿Podrían proporcionarme más información y precios?';
+                } else if (index === 1) {
+                    message = 'Hola Donato Tours! Estoy interesado en la Expedición Cultural y Rafting Pilón Lajas. ¿Podrían proporcionarme más información y disponibilidad?';
+                } else if (index === 2) {
+                    message = 'Hola Donato Tours! Estoy interesado en la Aventura en las Pampas del Río Yacuma. ¿Podrían proporcionarme más información y disponibilidad?';
+                }
+            } else {
+                if (index === 0) {
+                    message = "Hi Donato Tours! I'm interested in the Madidi Deep Jungle Adventure. Could you please provide more information and pricing?";
+                } else if (index === 1) {
+                    message = "Hi Donato Tours! I'm interested in the Pilon Lajas Cultural & Rafting Expedition. Could you please provide more information and availability?";
+                } else if (index === 2) {
+                    message = "Hi Donato Tours! I'm interested in the Yacuma River Pampas Adventure. Could you please provide more information and availability?";
+                }
+            }
+            
+            btn.href = `https://wa.me/59171996091?text=${encodeURIComponent(message)}`;
+        });
+    }
+
+    // Language Switcher Event Listeners
+    function setupLanguageSwitchers() {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const newLang = this.dataset.lang;
+                
+                if (newLang !== currentLanguage) {
+                    currentLanguage = newLang;
+                    localStorage.setItem('donatoToursLanguage', newLang);
+                    
+                    // Update active button
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Translate page with smooth transition
+                    document.body.style.opacity = '0.8';
+                    setTimeout(() => {
+                        translatePage();
+                        document.body.style.opacity = '1';
+                    }, 150);
+                }
+            });
+        });
+    }
+
+    // Initialize language system
+    initializeLanguage();
+    setupLanguageSwitchers();
 });
 
 // Utility functions
